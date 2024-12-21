@@ -32,7 +32,7 @@ function HomeCards() {
           <p>jídelen a restaurací</p>
         </div>
       </Link> 
-    </div>
+    </div> /* xdd*/ 
   );
 }
 
