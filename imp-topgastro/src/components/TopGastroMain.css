@@ -1,0 +1,97 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+font-family: 'Playfair Display', sans-serif;
+font-weight: 400;
+}
+
+.hero-container {
+background: url('./assets/foodbg.jpg') center center/cover no-repeat;
+height: 95vh;
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+position: relative;
+}
+
+.hero-container video {
+object-fit: cover;
+width: 100%;
+height: 100%;
+position: fixed;
+top: 0;
+left: 0;
+z-index: -1;
+}
+
+.hero-container h1 {
+font-family: 'Playfair Display', serif;
+color: #fff;
+font-size: 75px;
+}
+
+.hero-container p {
+font-family: 'Playfair Display', serif;
+color: #fff;
+font-size: 36px;
+}
+
+.hero-btns {
+z-index: 1;
+display: flex;
+justify-content: center;
+margin-top: 30px;
+}
+
+.hero-btns .btn {
+margin: 6px;
+}
+
+.fa-play-circle {
+margin-left: 4px;
+}
+
+.topgastro-bar {
+  background-color: #8C1E1E; 
+  width: 100%; 
+  height: 50px; 
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  color: white; 
+  font-family: Arial, sans-serif;
+}
+
+.contact-info {
+  display: flex;
+  gap: 20px; 
+}
+
+.contact-info span {
+  display: flex;
+  align-items: center;
+  gap: 5px; 
+}
+
+
+@media screen and (max-width: 768px) {
+.hero-container h1 {
+  font-size: 60px; 
+}
+
+.hero-container p {
+  font-size: 25px; 
+}
+
+.btn-mobile {
+  display: block;
+}
+
+.btn {
+  width: 100%; 
+}
+}
