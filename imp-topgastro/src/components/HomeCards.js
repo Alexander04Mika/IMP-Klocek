@@ -14,7 +14,7 @@ function HomeCards() {
       <Link to="/Retail" className="image-side left-side">
         <img src={leftImage} alt="Left Side" className="side-image" />
         <div className="image-text">
-          <h1>Retail</h1>
+          <h1>RETAIL</h1>
           <p>spolehlivý dodavatel</p> 
           <p>do maloobchodní sítě</p>
         </div>

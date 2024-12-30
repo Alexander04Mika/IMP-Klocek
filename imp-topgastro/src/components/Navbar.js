@@ -26,7 +26,7 @@ function Navbar() {
             <Link to="/Gastro/kariera" className="nav-links">Kariera</Link>
           </li>
           <li className="nav-item">
-            <Link to="/Gastro/order" className="nav-links">Objednávkový formulář</Link>
+            <Link to="/Gastro/Objednavky" className="nav-links">Objednávkový formulář</Link>
           </li>
         </ul>
       </div>
