@@ -1,38 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
-import './Order.css'
+import './Order.css';
 import logo from './assets/logo.svg'; 
 import logo2 from './assets/logo2.png';
-import { Link } from "react-router-dom"; 
-
-
-const productCategories = {
-  "Přílohy": [
-    { name: "Vaječné kapání do polévky", weight: "5kg", quantity: 1, price: 100 },
-    { name: "Bramborové těsto", weight: "5kg", quantity: 1, price: 200 },
-    { name: "Bramborové těsto 10kg", weight: "10kg", quantity: 1, price: 350 },
-  ],
-  "Rýže a Luštěniny": [
-    { name: "Rýže dlouhozrnná", weight: "5kg", quantity: 1, price: 120 },
-    { name: "Rýže parboiled", weight: "5kg", quantity: 1, price: 130 },
-  ],
-};
+import { Link } from "react-router-dom";
 
 function Order() {
   const [formData, setFormData] = useState({
     email: "",
     phone: "",
-    company: "", // For customer company (Zakazník)
-    ico: "", // For IČO
+    company: "",
+    ico: "",
     message: "",
-    deliveryDate: "", // For delivery date
+    deliveryDate: "",
   });
 
+  const [productCategories, setProductCategories] = useState({});
   const [selectedProducts, setSelectedProducts] = useState([]);
   const [successMessage, setSuccessMessage] = useState("");
   const [errors, setErrors] = useState({});
-  const [showSummary, setShowSummary] = useState(false); // To toggle between form and summary
-  const [finalOrder, setFinalOrder] = useState({}); // For storing final order info
+  const [showSummary, setShowSummary] = useState(false);
+  const [finalOrder, setFinalOrder] = useState({});
+
+  // Load products data from the public folder using fetch
+  useEffect(() => {
+    fetch("/products.json")
+      .then((response) => response.json())
+      .then((data) => setProductCategories(data))
+      .catch((error) => console.error("Error fetching JSON data:", error));
+  }, []);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -44,7 +40,7 @@ function Order() {
       (item) => item.name === product.name
     );
     if (existingProduct) {
-      existingProduct.quantity += 1; // Increment quantity if product already in cart
+      existingProduct.quantity += 1;
       setSelectedProducts([...selectedProducts]);
     } else {
       setSelectedProducts([...selectedProducts, { ...product, category, quantity: 1 }]);
@@ -56,67 +52,53 @@ function Order() {
     setSelectedProducts(updatedCart);
   };
 
-  // Validace formuláře
   const validateForm = () => {
     const errors = {};
 
-    // Validace pro e-mail
     if (!formData.email) {
       errors.email = "E-mail je povinný";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       errors.email = "E-mail musí obsahovat @";
     }
 
-    // Validace pro telefon (9 místní číslo)
     if (!formData.phone) {
       errors.phone = "Telefon je povinný";
     } else if (!/^\d{9}$/.test(formData.phone)) {
       errors.phone = "Telefonní číslo musí mít 9 číslic";
     }
 
-    // Validace pro IČO (8 místní číslo)
     if (!formData.ico) {
       errors.ico = "IČO je povinné";
     } else if (!/^\d{8}$/.test(formData.ico)) {
       errors.ico = "IČO musí mít 8 číslic";
     }
 
-    // Validace pro datum dodání
     if (!formData.deliveryDate) {
       errors.deliveryDate = "Datum dodání je povinné";
     }
 
-    // Validace pro produkty
     if (selectedProducts.length === 0)
       errors.products = "Musíte vybrat alespoň jeden produkt";
 
     return errors;
-  };const handleSubmit = (event) => {
+  };
+
+  const handleSubmit = (event) => {
     event.preventDefault();
     const newErrors = validateForm();
-  
+
     if (Object.keys(newErrors).length === 0) {
-      // You no longer need this `orderSummary` variable as `setFinalOrder` handles it
-      const productList = selectedProducts
-        .map(
-          (product) =>
-            `${product.name} (${product.weight}, ${product.quantity} ks)`
-        )
-        .join(", ");
-      const orderDate = new Date().toLocaleDateString("cs-CZ"); // Current date as order date
-  
-      // Directly set the final order state
+      const orderDate = new Date().toLocaleDateString("cs-CZ");
+
       setShowSummary(true);
       setFinalOrder({
         email: formData.email,
         phone: formData.phone,
-        company: formData.company, // Customer's company name
-        ico: formData.ico, // Customer's IČO
-        orderDate: orderDate, // Order date
-        deliveryDate: formData.deliveryDate, // Delivery date
-        product: productList, // Products list
-        message: formData.message,
-        selectedProducts, // Store selected products
+        company: formData.company,
+        ico: formData.ico,
+        orderDate: orderDate,
+        deliveryDate: formData.deliveryDate,
+        selectedProducts,
         totalPrice: selectedProducts.reduce(
           (total, product) => total + product.price * product.quantity,
           0
@@ -126,7 +108,7 @@ function Order() {
       setErrors(newErrors);
     }
   };
-  
+
   const handleConfirmOrder = () => {
     const emailContent = {
       email: formData.email,
@@ -144,6 +126,14 @@ function Order() {
       message: formData.message,
     };
 
+    const productDetails = finalOrder.selectedProducts
+      .map(
+        (product) =>
+          `${product.name} (${product.weight}), Množství: ${product.quantity}, Cena: ${product.price} Kč`
+      )
+      .join("<br>");
+
+    // Send the order via email using emailjs
     emailjs
       .send(
         "service_rcxjnlp",
@@ -160,6 +150,7 @@ function Order() {
             phone: "",
             company: "",
             ico: "",
+            product: productDetails, 
             message: "",
             deliveryDate: "",
           });
@@ -186,12 +177,13 @@ function Order() {
     <div className="order-container">
       <h1>Objednávkový formulář</h1>
       <h2>TOP GASTRO CZ s.r.o., Višňova 1240, 506 01 Jičín, tel: 420 702 070 329, www.topgastrocz.cz</h2>
+
       <Link to="../Gastro" id="order-logo-link">
-      <img id="order-logo" src={logo} alt="Logo"/>
+        <img id="order-logo" src={logo} alt="Logo" />
       </Link>
 
       <Link to="../Gastro" id="order-logo2-link">
-      <img id="order-logo2" src={logo2} alt="Logo2"/>
+        <img id="order-logo2" src={logo2} alt="Logo2" />
       </Link>
       
       {successMessage && <p className="success-message">{successMessage}</p>}
@@ -212,7 +204,7 @@ function Order() {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="order-form">
-          <label>Společnost (Zakazník)</label>
+          <label>Společnost (Zakazník):</label>
           <input
             type="text"
             name="company"
@@ -221,7 +213,7 @@ function Order() {
             placeholder="Název společnosti"
           />
 
-          <label>IČO</label>
+          <label>IČO:</label>
           <input
             type="text"
             name="ico"
@@ -231,7 +223,7 @@ function Order() {
           />
           {errors.ico && <p className="error-message">{errors.ico}</p>}
 
-          <label>E-mail</label>
+          <label>E-mail:</label>
           <input
             type="email"
             name="email"
@@ -241,7 +233,7 @@ function Order() {
           />
           {errors.email && <p className="error-message">{errors.email}</p>}
 
-          <label>Telefon</label>
+          <label>Telefon:</label>
           <input
             type="tel"
             name="phone"
@@ -251,7 +243,7 @@ function Order() {
           />
           {errors.phone && <p className="error-message">{errors.phone}</p>}
 
-          <label>Datum dodání</label>
+          <label>Datum dodání:</label>
           <input
             type="date"
             name="deliveryDate"
@@ -267,7 +259,7 @@ function Order() {
               <ul>
                 {products.map((product, index) => (
                   <li key={index}>
-                    {product.name} - {product.weight} ({product.quantity} ks)
+                    {product.name} - {product.weight}
                     <button
                       type="button"
                       onClick={() => handleProductSelect(category, product)}
@@ -285,8 +277,7 @@ function Order() {
           <ul>
             {selectedProducts.map((item, index) => (
               <li key={index}>
-                {item.name} - {item.weight} ({item.quantity} ks) z kategorie{" "}
-                {item.category}
+                {item.name} - {item.weight} ({item.quantity} ks) z kategorie {item.category}
                 <button
                   type="button"
                   onClick={() => handleRemoveFromCart(index)}
@@ -309,6 +300,7 @@ function Order() {
           <button type="submit" className="order-button">
             Odeslat
           </button>
+
         </form>
       )}
     </div>
