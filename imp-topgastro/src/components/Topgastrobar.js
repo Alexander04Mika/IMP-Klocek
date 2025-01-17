@@ -1,17 +1,16 @@
-import React from 'react'
+import React from 'react';
 import '../App.css';
 import './TopGastroMain.css';
 
-function Topgastrobar() {
+function TopGastroBar() {
   return (
-    
-      <div className='topgastro-bar'>
-        <span className='contact-info'>
+    <div className='topgastro-bar'>
+      <span className='contact-info'>
         <span>&#x260E; +420 702 070 329</span>
         <span>&#x2709; info@topgastrocz.cz</span>
-        </span>
-      </div>
-  )
+      </span>
+    </div>
+  );
 }
 
-export default Topgastrobar
+export default TopGastroBar;

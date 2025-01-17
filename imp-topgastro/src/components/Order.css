@@ -1,4 +1,4 @@
-/* Reset some default styles */
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
@@ -9,29 +9,29 @@ body {
   font-family: 'Arial', sans-serif;
   background-color: #f5f5f5;
   color: #333;
+  line-height: 1.6;
 }
 
+/* Typography */
 h1, h2, h3 {
   font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 h1 {
   font-size: 2.5rem;
   color: #333;
-  margin-bottom: 20px;
   text-decoration: underline;
 }
 
 h2 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #555;
-  margin-bottom: 20px;
 }
 
 h3 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #444;
-  margin-bottom: 10px;
   text-decoration: underline;
 }
 
@@ -56,6 +56,7 @@ h3 {
   width: 100%;
 }
 
+/* Product Grid */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -71,28 +72,65 @@ h3 {
 
 .product-item {
   border: 1px solid #ccc;
-  padding: 10px;
+  padding: 15px;
   border-radius: 8px;
   text-align: center;
   background-color: #f9f9f9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.product-item button {
-  background-color: #4CAF50;
-  color: white;
+.product-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+.order-btn {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
   border: none;
-  padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.product-item button:hover {
+.order-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.order-btn:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.order-btn[type="button"] {
+  background-color: #dc3545;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+}
+
+.order-btn[type="button"]:hover {
+  background-color: #c82333;
+}
+
+/* Product Buttons */
+.product-item .order-btn {
+  margin-top: 10px;
+  background-color: #4caf50;
+}
+
+.product-item .order-btn:hover {
   background-color: #45a049;
 }
 
+/* Logo Links */
 #order-logo-link, #order-logo2-link {
   display: inline-block;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease;
 }
 
 #order-logo-link:hover, #order-logo2-link:hover {
@@ -108,13 +146,12 @@ h3 {
 .order-form {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
+  gap: 15px;
 }
 
 label {
   font-size: 1rem;
   color: #333;
-  margin-bottom: 5px;
 }
 
 input, textarea, select {
@@ -124,7 +161,7 @@ input, textarea, select {
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #fafafa;
-  transition: border 0.3s ease;
+  transition: border-color 0.3s ease;
 }
 
 input:focus, textarea:focus, select:focus {
@@ -137,33 +174,7 @@ textarea {
   min-height: 100px;
 }
 
-/* Button Styles */
-button {
-  padding: 8px 16px;
-  font-size: 0.9rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-button:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
-}
-
-button:disabled {
-  background-color: #aaa;
-  cursor: not-allowed;
-}
-
-button + label, button + input, button + textarea {
-  margin-top: 10px;
-}
-
-/* Error and Success Messages */
+/* Messages */
 .error-message {
   color: #d9534f;
   font-size: 0.875rem;
@@ -175,9 +186,9 @@ button + label, button + input, button + textarea {
   margin-bottom: 20px;
 }
 
-/* Cart Styles */
+/* List Styles */
 ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
 }
 
@@ -186,28 +197,28 @@ li {
   font-size: 1rem;
 }
 
-button[type="button"] {
-  background-color: #dc3545;
-  color: white;
-  font-size: 0.8rem;
-  padding: 2px 4px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button[type="button"]:hover {
-  background-color: #c82333;
-}
-
 /* Toggle Button */
-.toggle-button {
+.toggle-order-btn {
   background: none;
   border: none;
   font-size: 18px;
   cursor: pointer;
   margin-left: 10px;
+}
+
+/* PDF Link */
+.pdf-link-container {
+  font-family: Arial, sans-serif;
+}
+
+.pdf-link-text {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pdf-link-text:hover {
+  text-decoration: underline;
 }
 
 /* Responsive Design */
@@ -224,7 +235,7 @@ button[type="button"]:hover {
     width: 80px;
   }
 
-  button {
+  .order-btn {
     width: 100%;
   }
 
@@ -242,7 +253,7 @@ button[type="button"]:hover {
     font-size: 1.8rem;
   }
 
-  button {
+  .order-btn {
     padding: 12px;
   }
 

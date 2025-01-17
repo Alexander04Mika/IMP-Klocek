@@ -22,7 +22,6 @@ function Order() {
   const [showSummary, setShowSummary] = useState(false);
   const [finalOrder, setFinalOrder] = useState({});
 
-  // Load products data from the public folder using fetch
   useEffect(() => {
     fetch("/products.json")
       .then((response) => response.json())
@@ -133,7 +132,6 @@ function Order() {
       )
       .join("<br>");
 
-    // Send the order via email using emailjs
     emailjs
       .send(
         "service_rcxjnlp",
@@ -185,7 +183,11 @@ function Order() {
       <Link to="../Gastro" id="order-logo2-link">
         <img id="order-logo2" src={logo2} alt="Logo2" />
       </Link>
-      
+
+    <div className="pdf-link-container">
+    Starý Způsob:  <a href="/objednavky.pdf" target="_blank" rel="noopener noreferrer" className="pdf-link-text">Objednavkový formulář </a> 
+    </div>
+
       {successMessage && <p className="success-message">{successMessage}</p>}
 
       {showSummary ? (
@@ -199,8 +201,8 @@ function Order() {
             ))}
           </ul>
           <p><strong>Celková cena: {finalOrder.totalPrice} Kč</strong></p>
-          <button onClick={handleConfirmOrder}>Potvrdit</button>
-          <button onClick={handleCancelOrder}>Zrušit</button>
+          <button onClick={handleConfirmOrder} className="order-btn">Potvrdit</button>
+          <button onClick={handleCancelOrder} className="order-btn">Zrušit</button>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="order-form">
@@ -263,6 +265,7 @@ function Order() {
                     <button
                       type="button"
                       onClick={() => handleProductSelect(category, product)}
+                      className="order-btn"
                     >
                       Přidat
                     </button>
@@ -281,6 +284,7 @@ function Order() {
                 <button
                   type="button"
                   onClick={() => handleRemoveFromCart(index)}
+                  className="order-btn"
                   style={{ marginLeft: "10px" }}
                 >
                   Odebrat
@@ -297,7 +301,7 @@ function Order() {
             placeholder="Sem napište vaši zprávu"
           ></textarea>
 
-          <button type="submit" className="order-button">
+          <button type="submit" className="order-btn">
             Odeslat
           </button>
 

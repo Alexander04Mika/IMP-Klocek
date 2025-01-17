@@ -10,7 +10,6 @@ function HomeCards() {
   return (
     <div className="home-container">
       
-      {/* Left Image (funguje jako tlačítko) */}
       <Link to="/Retail" className="image-side left-side">
         <img src={leftImage} alt="Left Side" className="side-image" />
         <div className="image-text">
@@ -22,7 +21,7 @@ function HomeCards() {
 
       <div className="logo-container">
         <img src={logo} alt="Logo" className="center-logo" />
-      </div>
+      </div> 
 
       <Link to="/Gastro" className="image-side right-side">
         <img src={rightImage} alt="Right Side" className="side-image" />
@@ -32,7 +31,7 @@ function HomeCards() {
           <p>jídelen a restaurací</p>
         </div>
       </Link> 
-    </div> /* xdd*/ 
+    </div> 
   );
 }
 
