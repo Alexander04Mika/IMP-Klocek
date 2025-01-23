@@ -13,14 +13,14 @@
     "web-vitals": "^2.1.4"
   },
   
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "server": "json-server --watch ./public/products.json --port 3002 --host 0.0.0.0",
-    "dev": "concurrently \"npm run start\" \"npm run server\""
-  },
+ "scripts": {
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject",
+  "server": "json-server --watch ./imp-topgastro/public/products.json --port 3003 --host 0.0.0.0",
+  "dev": "concurrently \"npm run start\" \"npm run server\""
+},
 
   "eslintConfig": {
     "extends": [
