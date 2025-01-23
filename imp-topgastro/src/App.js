@@ -9,44 +9,78 @@ import Gastro from './components/pages/Gastro.js';
 import Retail from './components/pages/Retail.js';
 import AdminDashboard from "./components/AdminDashboard.js";
 import AdminLogin from "./components/AdminLogin.js";
-{/*}
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import FoodManager from "./components/FoodManager.js";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBDJoQzCDz6Ite_ZZ_ZMTgYRhfpCzfi-mA",
-  authDomain: "imp-topgastro.firebaseapp.com",
-  projectId: "imp-topgastro",
-  storageBucket: "imp-topgastro.firebasestorage.app",
-  messagingSenderId: "1050890257870",
-  appId: "1:1050890257870:web:834e74a05df666ac99979f",
-  measurementId: "G-ZYWDLGTR03"
-};
-
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-*/}
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // For FoodManager login
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-  const login = () => setIsAuthenticated(true);
-  const logout = () => setIsAuthenticated(false);
+  // FoodManager login handler
+  const handleFoodManagerLogin = async () => {
+    if (!username || !password) {
+      alert("Please enter both username and password.");
+      return;
+    }
+
+    try {
+      const response = await fetch('http://localhost:3002/users');
+      const users = await response.json();
+
+      const user = users.find((u) => u.username === username && u.password === password);
+
+      if (user) {
+        setIsLoggedIn(true);
+        alert('Logged in successfully!');
+      } else {
+        alert('Invalid credentials');
+      }
+    } catch (error) {
+      alert("Error connecting to the server.");
+      console.error("Error:", error);
+    }
+  };
 
   return (
-    <>
-      <Router>
-        <Routes>
-          <Route path='/' exact element={<Home />} />
-          <Route path='/Retail' exact element={<Retail />} />
-          <Route path='/admin' exact element={<AdminLogin />} />
-          <Route path='/admin/dashboard' element={isAuthenticated ? <AdminDashboard logout={logout} /> : <AdminLogin login={login} />} />
-          <Route path='/Gastro' exact element={<Gastro />} />
-          <Route path='/Gastro/Objednavky' exact element={<Objednavky />} />
-          <Route path='/Gastro/Kontakty' exact element={<Kontakty />} />
-          <Route path='/Gastro/Katalog' exact element={<Katalog/>} />
-        </Routes>
-      </Router>
-    </>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/Retail' element={<Retail />} />
+        <Route path='/admin' element={<AdminLogin />} />
+        <Route path='/admin/dashboard' element={<AdminDashboard />} />
+        <Route path='/Gastro' element={<Gastro />} />
+        <Route path='/Gastro/Objednavky' element={<Objednavky />} />
+        <Route path='/Gastro/Kontakty' element={<Kontakty />} />
+        <Route path='/Gastro/Katalog' element={<Katalog />} />
+        
+        {/* FoodManager login route */}
+        <Route
+          path='/food-manager'
+          element={
+            isLoggedIn ? (
+              <FoodManager />
+            ) : (
+              <div>
+                <h1>Food Manager Login</h1>
+                <input
+                  type="text"
+                  placeholder="Username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <button onClick={handleFoodManagerLogin}>Sign In</button>
+              </div>
+            )
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 

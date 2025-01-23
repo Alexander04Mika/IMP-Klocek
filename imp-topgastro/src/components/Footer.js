@@ -51,9 +51,9 @@ function Footer() {
             </Link>
           </div>
           
-          <Link to="/admin">
-            <button className="admin-login-button">Go to Admin</button>
-          </Link>
+          <Link to="/food-manager">
+  <button className="admin-login-button">Go to Admin</button>
+</Link>
 
         </div>
       </section>

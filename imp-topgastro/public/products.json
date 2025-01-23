@@ -1,5 +1,9 @@
 
 {
+  "users": [
+    { "id": 1, "username": "admin", "password": "12345", "isLoggedIn": false}
+  ],
+
   "PŘÍLOHY (+pravé italské těstoviny)": [
   { "name": "Bramborové těsto", "weight": "5kg ", "quantity": 1, "price": 200 },
     { "name": "Bramborové těsto", "weight": "10kg ", "quantity": 1, "price": 350 },
