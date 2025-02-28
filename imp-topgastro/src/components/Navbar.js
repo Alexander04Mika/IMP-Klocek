@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import logo from './assets/logo.svg'; 
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { Link, useNavigate } from 'react-router-dom'; 
 
 function Navbar() {
   const [click, setClick] = useState(false); 
-  const [isMobile, setIsMobile] = useState(false); // State to check if the screen is mobile
-  const navigate = useNavigate(); // Initialize navigate
+  const [isMobile, setIsMobile] = useState(false); 
+  const navigate = useNavigate(); 
 
   const handleClick = () => setClick(!click);
 
   const handleBackClick = () => {
-    navigate(-1); // Go back to the previous page
+    navigate(-1); 
   };
 
-  // Hook to check screen size for mobile
   useEffect(() => {
     const updateWidth = () => {
       if (window.innerWidth <= 980) {
@@ -24,13 +23,10 @@ function Navbar() {
       }
     };
 
-    // Add event listener to check screen resize
     window.addEventListener('resize', updateWidth);
 
-    // Initial check on mount
     updateWidth();
 
-    // Cleanup listener on unmount
     return () => window.removeEventListener('resize', updateWidth);
   }, []);
 
@@ -51,7 +47,10 @@ function Navbar() {
             <Link to="/Gastro/Kontakty" className="nav-links">Kontakty</Link>
           </li>
           <li className="nav-item">
-            <Link to="/Gastro/Onas" className="nav-links">O nás</Link>
+            <Link to="/Gastro/About" className="nav-links">O nás</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/Gastro/Sklad" className="nav-links">Sklad</Link>
           </li>
           <li className="nav-item">
             <Link to="/Gastro/Objednavky" className="nav-links">Objednávkový formulář</Link>

@@ -12,14 +12,14 @@ function Cards() {
               src='pictures/2024kat.jpg'
               text='Katalog 2024'
               label='Katalog 2024'
-              path='/Gastro/katalog'
+              path='/Gastro/Katalog'
               paddingTop='130%'
             />
             <CardItem
               src='pictures/2023kat.jpg'
               text='Katalog 2023'
               label='Katalog 2023'
-              path='/Gastro/katalog'
+              path='/Gastro/Katalog'
               paddingTop='130%'
             />
           </ul>
@@ -28,22 +28,21 @@ function Cards() {
               src='pictures/sklad.jpg'
               text='Změna adresy skladu'
               label='Sklad'
-              path='/adresa'
+              path='/Gastro/Kontakty'
               paddingTop='67%'
-              
             />
             <CardItem
               src='pictures/recept.jpg'
               text='Tip na Recept'
               label='Recept'
-              path='/recepts'
+              path='/Gastro/Recepty'
               paddingTop='67%'
             />
             <CardItem
               src='pictures/zastupce.jpg'
-              text='Hledáme schopné obchodní zástupce pro celou Českou republiku'
+              text='Hledáme schopné obchodní zástupce pro celou ČR'
               label='Hledáme zástupce'
-              path='/adresa'
+              path='/Gastro/Zajem'
               paddingTop='67%'
             />
           </ul>

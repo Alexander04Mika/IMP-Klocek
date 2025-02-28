@@ -155,7 +155,7 @@
 
   .hero-logo {
     position: absolute;
-    top: 170px;
+    top: 650px;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 200px;
@@ -166,7 +166,7 @@
 @media screen and (max-width: 770px) {
   .hero-logo {
     position: absolute;
-    top: 170px;
+    top: 600px;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 170px;

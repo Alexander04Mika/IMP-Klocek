@@ -1,0 +1,531 @@
+/*
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Playfair Display', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-container-kontakty {
+  background: url('./assets/foodbg.jpg') center center/cover no-repeat;
+  min-height: 95vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px; 
+}
+
+.kontakty-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  gap: 20px;
+}
+
+.kontakty-text-container {
+  flex: 1;
+  padding: 20px;
+  color: #8B0000;
+  font-weight: bold; 
+}
+
+.kontakty-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-hover-kontakty {
+  max-width: 120%; 
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-hover-kontakty:hover {
+  transform: scale(1.02);
+}
+
+.h5 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #8B0000;
+}
+
+.kontakty-main-container {
+  font-size: 16px;
+  line-height: 1.8;
+  background: transparent;
+  color: #8B0000;
+  font-weight: bold; 
+}
+
+.kontakty-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #8B0000;
+}
+
+.kontakty-text {
+  margin: 10px 0;
+  color: #8B0000;
+  font-weight: bold; 
+}
+
+.kontakty-address {
+  font-weight: bold;
+}
+
+.kontakty-subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.kontakty-link {
+  color: #f4d03f;
+  text-decoration: none; 
+  font-weight: bold;
+}
+
+.kontakty-link:hover {
+  text-decoration: none; 
+}
+
+.kontakty-footer {
+  font-style: italic;
+  margin-top: 30px;
+  color: #8B0000;
+}
+
+
+@media (max-width: 1800px) {
+  .h5 {
+    font-size: 28px;
+  }
+  .kontakty-title {
+    font-size: 20px;
+  }
+  .kontakty-subtitle {
+    font-size: 16px;
+  }
+  .kontakty-main-container {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1500px) {
+  .h5 {
+    font-size: 20px;
+  }
+  .kontakty-title {
+    font-size: 14px;
+  }
+  .kontakty-subtitle {
+    font-size: 10px;
+  }
+  .kontakty-main-container {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .kontakty-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .kontakty-text-container {
+    order: 2;
+  }
+
+  .kontakty-image-container {
+    order: 1;
+  }
+
+  .image-hover-kontakty {
+    max-width: 100%;
+  }
+}
+
+
+*/ 
+
+
+
+
+/*
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Playfair Display', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-container-kontakty {
+  background: url('./assets/foodbg.jpg') center center/cover no-repeat;
+  min-height: 95vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.kontakty-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  gap: 20px;
+}
+
+.kontakty-text-container {
+  flex: 1;
+  padding: 20px;
+  color: #8B0000;
+  font-weight: bold;
+}
+
+.kontakty-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-hover-kontakty {
+  max-width: 120%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-hover-kontakty:hover {
+  transform: scale(1.02);
+}
+
+.h5 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #8B0000;
+}
+
+.kontakty-main-container {
+  font-size: 16px;
+  line-height: 1.8;
+  background: transparent;
+  color: #8B0000;
+  font-weight: bold;
+}
+
+.kontakty-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #8B0000;
+}
+
+.kontakty-text {
+  margin: 10px 0;
+  color: #8B0000;
+  font-weight: bold;
+}
+
+.kontakty-address {
+  font-weight: bold;
+}
+
+.kontakty-subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.kontakty-link {
+  color: #f4d03f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.kontakty-link:hover {
+  text-decoration: none;
+}
+
+.kontakty-footer {
+  font-style: italic;
+  margin-top: 30px;
+  color: #8B0000;
+}
+
+@media (max-width: 1700px) {
+  .h5 {
+    font-size: 28px;
+  }
+  .kontakty-text{
+    font-size: 16px;
+  }
+  .kontakty-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  .kontakty-subtitle {
+    font-size: 16px;
+  }
+  .kontakty-main-container {
+    font-size: 15px;
+  }
+  .image-hover-kontakty {
+    max-width: 110%;
+  }
+}
+
+@media (max-width: 1500px) {
+  .h5 {
+    font-size: 26px;
+  }
+  .kontakty-title {
+    font-size: 18px;
+  }
+  .kontakty-subtitle {
+    font-size: 15px;
+  }
+  .kontakty-main-container {
+    font-size: 14px;
+  }
+  .image-hover-kontakty {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .h5 {
+    font-size: 24px;
+  }
+  .kontakty-title {
+    font-size: 16px;
+  }
+  .kontakty-subtitle {
+    font-size: 14px;
+  }
+  .kontakty-main-container {
+    font-size: 13px;
+  }
+  .image-hover-kontakty {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .kontakty-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .kontakty-text-container {
+    order: 2;
+  }
+  .kontakty-image-container {
+    order: 1;
+  }
+  .image-hover-kontakty {
+    max-width: 80%;
+  }
+}
+
+*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Playfair Display', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-container-kontakty {
+  background: url('./assets/foodbg.jpg') center center/cover no-repeat;
+  min-height: 95vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.kontakty-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  gap: 20px;
+  flex-direction: row; /* Aligns items in a row, so images will be on the left */
+}
+
+.kontakty-text-container {
+  flex: 1;
+  padding: 20px;
+  padding-left: 50px;
+  color: #8B0000;
+  font-weight: bold;
+  order: 2; /* Makes sure the text is on the right side */
+}
+
+.kontakty-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 1; /* Makes sure the image is on the left side */
+}
+
+.image-hover-kontakty {
+  max-width: 120%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-hover-kontakty:hover {
+  transform: scale(1.02);
+}
+
+.h5 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #8B0000;
+}
+
+.kontakty-main-container {
+  font-size: 16px;
+  line-height: 1.8;
+  background: transparent;
+  color: #8B0000;
+  font-weight: bold;
+}
+
+.kontakty-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #8B0000;
+}
+
+.kontakty-text {
+  margin: 10px 0;
+  color: #8B0000;
+  font-weight: bold;
+}
+
+.kontakty-address {
+  font-weight: bold;
+}
+
+.kontakty-subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.kontakty-link {
+  color: #f4d03f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.kontakty-link:hover {
+  text-decoration: none;
+}
+
+.kontakty-footer {
+  font-style: italic;
+  margin-top: 30px;
+  color: #8B0000;
+}
+
+/* Responsive Design */
+@media (max-width: 1700px) {
+  .h5 {
+    font-size: 28px;
+  }
+  .kontakty-text {
+    font-size: 16px;
+  }
+  .kontakty-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  .kontakty-subtitle {
+    font-size: 16px;
+  }
+  .kontakty-main-container {
+    font-size: 15px;
+  }
+  .image-hover-kontakty {
+    max-width: 110%;
+  }
+}
+
+@media (max-width: 1500px) {
+  .h5 {
+    font-size: 26px;
+  }
+  .kontakty-title {
+    font-size: 18px;
+  }
+  .kontakty-subtitle {
+    font-size: 15px;
+  }
+  .kontakty-main-container {
+    font-size: 14px;
+  }
+  .image-hover-kontakty {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .h5 {
+    font-size: 24px;
+  }
+  .kontakty-title {
+    font-size: 16px;
+  }
+  .kontakty-subtitle {
+    font-size: 14px;
+  }
+  .kontakty-main-container {
+    font-size: 13px;
+  }
+  .image-hover-kontakty {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .kontakty-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .kontakty-text-container {
+    order: 2;
+  }
+  .kontakty-image-container {
+    order: 1;
+  }
+  .image-hover-kontakty {
+    max-width: 80%;
+  }
+}

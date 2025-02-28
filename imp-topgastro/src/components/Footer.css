@@ -20,8 +20,7 @@
 }
 
 .footer-subscription > p {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .footer-subscription-heading {
@@ -92,10 +91,12 @@
 .footer-input::placeholder {
   color: #b1b1b1;
 }
+
 .footer-logo {
   width: 160px;
   height: auto;
 }
+
 /* Social Icons */
 .social-icon-link {
   color: #fff;
@@ -109,18 +110,17 @@
 
 .social-media-wrap {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 90%;
+  gap: 60px; /* Increased gap */
+  width: 100%;
   max-width: 1000px;
   margin: 40px auto 0 auto;
 }
 
 .social-icons {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 240px;
+  gap: 40px; /* Increased gap */
 }
 
 .social-logo {
@@ -135,33 +135,161 @@
   margin-bottom: 16px;
 }
 
+/* Move website rights to the right */
 .website-rights {
   font-size: 1rem;
   color: #fff;
-  margin-bottom: -8px;
+  white-space: nowrap; /* Zabrání zalomení textu na nový řádek */
+  display: flex;
+  align-items: center; 
+  justify-content: flex-end; /* Align to the right */
+  width: 100%; /* Take up full width */
+  margin-top: 16px; /* Add some space above */
+  padding-right: 20px; /* Add some space from the right edge */
+}
+
+/* Oprava barvy textu pro O nás a Kdo jsme */
+.white-text {
+  color: #fff !important;
+}
+
+.social-media-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  gap: 140px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto 0 auto;
+}
+
+/* Zarovnání loga */
+.footer-logo {
+  width: 160px;
+  height: auto;
+}
+
+
+.social-icons {
+  display: flex;
+  gap: 140px; 
+}
+
+/* Tlačítko Admin Login / Dashboard */
+.admin-login-button,
+.admin-dashboard-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #fff;
+  color: #242424;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.admin-login-button:hover,
+.admin-dashboard-button:hover {
+  background-color: #ddd;
+}
+
+/* Media Query for Smaller Screens */
+@media screen and (max-width: 1024px) {
+  .footer-links {
+    padding-top: 2rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-link-items {
+    width: 150px; /* Slightly smaller links */
+    margin: 10px; /* Adjusted margin */
+  }
+
+  .footer-input {
+    width: 100%;
+    font-size: 16px; /* Make input text smaller */
+  }
+
+  .social-media-wrap {
+    gap: 40px; /* Reduce gap between icons */
+  }
+
+  .social-icons {
+    gap: 20px; /* Reduce gap between social icons */
+  }
+
+  .social-logo {
+    font-size: 1.5rem; /* Slightly smaller logo */
+  }
+
+  .admin-login-button,
+  .admin-dashboard-button {
+    padding: 8px 16px; /* Slightly smaller buttons */
+    font-size: 14px; /* Smaller text size */
+  }
+
+  .website-rights {
+    font-size: 0.875rem; /* Smaller text for website rights */
+    padding-right: 10px; /* Adjust right padding */
+  }
 }
 
 @media screen and (max-width: 820px) {
   .footer-links {
     padding-top: 2rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-link-items {
+    width: 120px; /* Even smaller links on small screens */
+    margin: 10px; /* Adjusted margin */
   }
 
   .footer-input {
     width: 100%;
-  }
-
-  .btn {
-    width: 100%;
-  }
-
-  .footer-link-wrapper {
-    flex-direction: column;
+    font-size: 14px; /* Make input text even smaller */
   }
 
   .social-media-wrap {
     flex-direction: column;
+    gap: 20px; /* Reduce gap further for smaller screens */
+  }
+
+  .social-icons {
+    gap: 15px; /* Reduce gap between social icons */
+  }
+
+  .social-logo {
+    font-size: 1.25rem; /* Smaller logo on small screens */
+  }
+
+  .admin-login-button,
+  .admin-dashboard-button {
+    padding: 6px 12px; /* Smaller buttons */
+    font-size: 12px; /* Even smaller text size */
+  }
+
+  .website-rights {
+    font-size: 0.75rem; /* Very small text for website rights */
+    padding-right: 5px; /* Adjust right padding */
   }
 }
 
 @media screen and (max-width: 768px) {
+  .footer-container {
+    padding: 3rem 0 1rem 0;
+  }
+
+  .footer-links {
+    flex-direction: column;
+  }
+
+  .social-media-wrap {
+    gap: 30px; /* Reduce gap on very small screens */
+  }
+
+  .social-icons {
+    gap: 10px; /* Reduce gap between social icons */
+  }
 }

@@ -6,14 +6,14 @@ import Navbar from '../Navbar.js';
 import TopGastroMain from '../TopGastroMain.js';
 import Topgastrobar from '../Topgastrobar.js';
 
-function Gastro() {
+function Gastro({ isAdmin }) {
     return (
         <>
         <Navbar/>
         <TopGastroMain/>
         <Topgastrobar/>
         <Cards/>
-        <Footer/>
+        <Footer isAdmin={isAdmin}/> 
         </>
     );
 }
