@@ -1,0 +1,335 @@
+/*
+
+.hero-container-historie {
+    min-height: 95vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background 0.5s ease-in-out;
+  }
+  
+  .historie-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    gap: 20px;
+    flex-direction: row;
+  }
+  
+  .historie-text-container {
+    flex: 1;
+    padding: 20px;
+    padding-left: 50px;
+    color: #fbfbfb;
+    font-weight: bold;
+    order: 2;
+  }
+  
+  .historie-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 1;
+  }
+  
+  .image-hover-historie {
+    max-width: 120%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .image-hover-historie:hover {
+    transform: scale(1.02);
+  }
+  
+  .h5 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .historie-main-container {
+    font-size: 16px;
+    line-height: 1.8;
+    background: transparent;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .historie-text {
+    text-align: center;
+    margin: 10px 0;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .historie-list {
+    text-align: center;
+    list-style-position: inside;
+    padding: 0;
+  }
+  
+  .historie-footer {
+    font-style: italic;
+    margin-top: 30px;
+    color: #ffffff;
+  }
+  
+  .fullscreen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .fullscreen-content {
+    position: relative;
+    display: inline-block;
+    max-width: 90%;
+    max-height: 90%;
+  }
+  
+  .fullscreen-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    color: white;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 1024px) {
+    .historie-content {
+      flex-direction: column;
+      text-align: center;
+    }
+    .historie-text-container {
+      order: 2;
+    }
+    .historie-image-container {
+      padding-top: 100px;
+      order: 1;
+    }
+    .image-hover-historie {
+      padding-top: 100px;
+      max-width: 80%;
+    }
+    .h5 {
+      font-size: 19.2px;
+    }
+    .historie-main-container {
+      font-size: 9.6px;
+    }
+    .historie-text {
+      font-size: 9.6px;
+    }
+    .historie-footer {
+      font-size: 9.6px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .h5 {
+      font-size: 13.44px;
+    }
+    .historie-main-container {
+      font-size: 6.72px;
+    }
+    .historie-text {
+      font-size: 6.72px;
+    }
+    .historie-footer {
+      font-size: 6.72px;
+    }
+  }
+  */
+  .hero-container-historie {
+    min-height: 95vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background 0.5s ease-in-out;
+  }
+  
+  .historie-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    gap: 20px;
+    flex-direction: row;
+  }
+  
+  .historie-text-container {
+    flex: 1;
+    padding: 20px;
+    padding-left: 50px;
+    color: #fbfbfb;
+    font-weight: bold;
+    order: 2;
+  }
+  
+  .historie-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 1;
+  }
+  
+  .image-hover-historie {
+    max-width: 90%; 
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .image-hover-historie:hover {
+    transform: scale(1.02);
+  }
+  
+  .h5 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .historie-main-container {
+    font-size: 14px;
+    line-height: 1.8;
+    background: transparent;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .historie-text {
+    text-align: center;
+    margin: 10px 0;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .historie-list {
+    text-align: center;
+    list-style-position: inside;
+    padding: 0;
+  }
+  
+  .historie-list li {
+    font-size: 16px !important;
+  }
+  
+  .historie-footer {
+    font-style: italic;
+    margin-top: 30px;
+    color: #ffffff;
+  }
+  
+  .fullscreen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .fullscreen-content {
+    position: relative;
+    display: inline-block;
+    max-width: 90%;
+    max-height: 90%;
+  }
+  
+  .fullscreen-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    color: white;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 1024px) {
+    .historie-content {
+      flex-direction: column;
+      text-align: center;
+    }
+    .historie-text-container {
+      order: 2;
+    }
+    .historie-image-container {
+      padding-top: 50px;
+      order: 1;
+    }
+    .image-hover-historie {
+      padding-top: 100px;
+      max-width: 64%; 
+    }
+    .h5 {
+      font-size: 20px;
+    }
+    .historie-main-container, .historie-text, .historie-footer {
+      font-size: 10px;
+    }
+    .historie-list li {
+      font-size: 12px !important; /*tady s tím poradil chat (!important) */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .h5 {
+      font-size: 14px;
+    }
+    .historie-main-container, .historie-text, .historie-footer {
+      font-size: 8px;
+    }
+    .historie-list li {
+      font-size: 10px !important;
+    }
+  }
+  

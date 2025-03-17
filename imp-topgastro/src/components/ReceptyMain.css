@@ -1,0 +1,272 @@
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Playfair Display', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .hero-container-recept {
+    min-height: 95vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background 0.5s ease-in-out;
+  }
+  
+  .recept-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    gap: 20px;
+    flex-direction: row;
+  }
+  
+  .recept-text-container {
+    flex: 1;
+    padding: 20px;
+    padding-left: 50px;
+    color: #fbfbfb;
+    font-weight: bold;
+    order: 2;
+    text-align: center;
+  }
+  
+  .recept-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 1;
+  }
+  
+  .image-hover-recept {
+    max-width: 120%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .image-hover-recept:hover {
+    transform: scale(1.02);
+  }
+  
+  .h5 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .recept-main-container {
+    font-size: 16px;
+    line-height: 1.8;
+    background: transparent;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .recept-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .recept-text {
+    margin: 10px 0;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .recept-subtitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .fullscreen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .fullscreen-content {
+    position: relative;
+    display: inline-block;
+    max-width: 90%;
+    max-height: 90%;
+  }
+  
+  .fullscreen-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    color: white;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .recept-main-container ul {
+    padding-left: 20px !important;
+    list-style-type: none !important;
+  }
+  
+  .recept-main-container li {
+    font-size: 16px !important;  
+    color: #ffffff !important;
+    margin-bottom: 8px !important;
+  }
+  
+  @media (max-width: 1700px) {
+    .h5 {
+      font-size: 28px;
+    }
+    .recept-text {
+      font-size: 16px;
+    }
+    .recept-title {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+    .recept-subtitle {
+      font-size: 16px;
+    }
+    .recept-main-container {
+      font-size: 15px;
+    }
+    .image-hover-recept {
+      max-width: 110%;
+    }
+  
+    .recept-main-container li {
+      font-size: 14px !important;
+    }
+  }
+  
+  @media (max-width: 1500px) {
+    .h5 {
+      font-size: 26px;
+    }
+    .recept-title {
+      font-size: 18px;
+    }
+    .recept-subtitle {
+      font-size: 15px;
+    }
+    .recept-main-container {
+      font-size: 14px;
+    }
+    .image-hover-recept {
+      max-width: 100%;
+    }
+  
+    .recept-main-container li {
+      font-size: 12px !important;
+    }
+    .recept-text {
+        font-size: 12px;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .h5 {
+      font-size: 24px;
+    }
+    .recept-title {
+      font-size: 16px;
+    }
+    .recept-subtitle {
+      font-size: 14px;
+    }
+    .recept-main-container {
+      font-size: 13px;
+    }
+    .image-hover-recept {
+      max-width: 90%;
+    }
+  
+    .recept-main-container li {
+      font-size: 11px !important;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .recept-content {
+      flex-direction: column;
+      text-align: center;
+    }
+    .recept-text-container {
+      order: 2;
+    }
+    .recept-image-container {
+      padding-top: 60px;
+      order: 1;
+    }
+  
+    .image-hover-recept {
+      padding-top: 100px;
+      max-width: 80%;
+    }
+  
+    .recept-main-container li {
+      font-size: 9px !important;
+    }
+
+    .recept-text {
+        font-size: 10px;
+    }
+  }
+
+    @media (max-width: 1024px) {
+        .recept-content {
+          flex-direction: column;
+          text-align: center;
+        }
+        .recept-text-container {
+          order: 2;
+        }
+        .recept-image-container {
+          padding-top: 60px;
+          order: 1;
+        }
+      
+        .image-hover-recept {
+          padding-top: 100px;
+          max-width: 80%;
+        }
+      
+        .recept-main-container li {
+          font-size: 8px !important;
+        }
+    
+        .recept-text {
+            font-size: 7px;
+        }
+  }
+  

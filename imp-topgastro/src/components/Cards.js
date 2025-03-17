@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import './Cards.css';
 import CardItem from './CardItem';
@@ -9,39 +11,39 @@ function Cards() {
         <div className='cards__wrapper'>
           <ul className='cards__items'>
             <CardItem
-              src='pictures/2024kat.jpg'
+              src='pictures/2024kat.webp'
               text='Katalog 2024'
-              label='Katalog 2024'
-              path='/Gastro/Katalog'
+              
+              path='/katalog2024.pdf'
               paddingTop='130%'
             />
             <CardItem
-              src='pictures/2023kat.jpg'
+              src='pictures/2023kat.webp'
               text='Katalog 2023'
-              label='Katalog 2023'
-              path='/Gastro/Katalog'
+              /*label='Katalog 2023'         ----- label už nikde nepoužívám */
+              path='/katalog2023.pdf'
               paddingTop='130%'
             />
           </ul>
           <ul className='cards__items'>
             <CardItem
-              src='pictures/sklad.jpg'
+              src='pictures/sklad.webp'
               text='Změna adresy skladu'
-              label='Sklad'
+             
               path='/Gastro/Kontakty'
               paddingTop='67%'
             />
             <CardItem
-              src='pictures/recept.jpg'
+              src='pictures/recept.webp'
               text='Tip na Recept'
-              label='Recept'
+             
               path='/Gastro/Recepty'
               paddingTop='67%'
             />
             <CardItem
-              src='pictures/zastupce.jpg'
+              src='pictures/zastupce.webp'
               text='Hledáme schopné obchodní zástupce pro celou ČR'
-              label='Hledáme zástupce'
+             
               path='/Gastro/Zajem'
               paddingTop='67%'
             />
@@ -52,4 +54,4 @@ function Cards() {
   );
 }
 
-export default Cards;
+export default Cards; 

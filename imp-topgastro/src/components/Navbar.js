@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import logo from './assets/logo.svg'; 
+import menuIcon from './assets/menu-icon.png';  
+import closeIcon from './assets/close-icon.png'; 
 import { Link, useNavigate } from 'react-router-dom'; 
 
 function Navbar() {
@@ -24,7 +26,6 @@ function Navbar() {
     };
 
     window.addEventListener('resize', updateWidth);
-
     updateWidth();
 
     return () => window.removeEventListener('resize', updateWidth);
@@ -32,12 +33,11 @@ function Navbar() {
 
   return (
     <nav className={`navbar ${click ? 'active' : ''}`}>
-      
-      <img src={logo} alt="Logo" className="hero-logo" />
+      <img src={logo} alt="Logo" className={`hero-logo ${click ? 'logo-hidden' : ''}`} />
       
       <div className="navbar-container">
         <div className="menu-icon" onClick={handleClick}>
-          <i className={click ? 'fas fa-times' : 'fas fa-bars'}></i>
+          <img src={click ? closeIcon : menuIcon} alt="Menu" className="menu-img" />
         </div>
         <ul className={`nav-menu ${click ? 'active' : ''}`}>
           <li className="nav-item">

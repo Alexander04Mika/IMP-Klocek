@@ -4,11 +4,14 @@ html {
 
 body {
   font-family: 'Playfair Display', sans-serif;
+  font-display: swap;
   font-weight: 400;
 }
 
-.hero-container {
-  background: url('./assets/foodbg.jpg') center center/cover no-repeat;
+/*
+.gastro-main-container {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url('./assets/foodbg.webp') center center/cover no-repeat;
   height: 95vh;
   width: 100%;
   display: flex;
@@ -17,37 +20,77 @@ body {
   align-items: center;
   position: relative;
 }
+*/
 
-.hero-container video {
-  object-fit: cover;
+.gastro-main-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.gastro-main-image {
+  position: absolute;
   width: 100%;
   height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
+  object-fit: cover; 
   z-index: -1;
 }
 
-.hero-container h1 {
+.gastro-main-content {
+  position: relative;
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.5); 
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/*
+.gastro-main-container {
+  background-color: #222; 
+  min-height: 95vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: background-image 0.5s ease-in-out;
+  background-size: cover;  
+  background-position: center center; 
+  background-repeat: no-repeat; 
+}
+
+*/
+/* */
+
+.gastro-main-container h1 {
   font-family: 'Playfair Display', serif;
   color: #fff;
   font-size: 75px;
+  font-display: swap; /* To avoid render-blocking font load */
+  text-align: center;
+  margin: 0;
 }
 
-.hero-container p {
+.gastro-main-container p {
   font-family: 'Playfair Display', serif;
   color: #fff;
   font-size: 36px;
 }
 
-.hero-btns {
+.gastro-btns {
   z-index: 1;
   display: flex;
   justify-content: center;
   margin-top: 30px;
 }
 
-.hero-btns .topgastro-btn {
+.gastro-btns .topgastro-btn {
   margin: 6px;
 }
 
@@ -55,35 +98,35 @@ body {
   margin-left: 4px;
 }
 
-.topgastro-bar {
-  background-color: #8C1E1E; 
-  width: 100%; 
-  height: 50px; 
+.gastro-bar {
+  background-color: #8C1E1E;
+  width: 100%;
+  height: 50px;
   display: flex;
-  align-items: center; 
-  justify-content: center; 
-  color: white; 
+  align-items: center;
+  justify-content: center;
+  color: white;
   font-family: Arial, sans-serif;
 }
 
-.contact-info {
+.gastro-contact-info {
   display: flex;
-  gap: 20px; 
+  gap: 20px;
 }
 
-.contact-info span {
+.gastro-contact-info span {
   display: flex;
   align-items: center;
-  gap: 5px; 
+  gap: 5px;
 }
 
 @media screen and (max-width: 768px) {
-  .hero-container h1 {
-    font-size: 60px; 
+  .gastro-main-container h1 {
+    font-size: 60px;
   }
 
-  .hero-container p {
-    font-size: 25px; 
+  .gastro-main-container p {
+    font-size: 25px;
   }
 
   .topgastro-btn-mobile {
@@ -91,6 +134,26 @@ body {
   }
 
   .topgastro-btn {
-    width: 100%; 
+    width: 100%;
+  }
+
+  .gastro-contact-info {
+    display: flex;
+    gap: 20px;
+    font-size: 10px;
+  }
+
+  .gastro-bar {
+    height: 30px;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .gastro-main-container h1 {
+    font-size: 50px;
+  }
+
+  .gastro-main-container p {
+    font-size: 20px;
   }
 }

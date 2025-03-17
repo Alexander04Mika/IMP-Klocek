@@ -5,6 +5,7 @@ import Topgastrobar from '../Topgastrobar.js';
 
 function Home() {
     return (
+        
         <>
         <HomeCards/> 
         <Topgastrobar/>

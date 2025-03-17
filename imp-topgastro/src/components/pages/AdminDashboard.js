@@ -5,8 +5,8 @@ function AdminDashboard() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem("isAuthenticated"); // Remove login state
-    navigate("/login"); // Redirect back to login
+    localStorage.removeItem("isAuthenticated"); 
+    navigate("/login"); 
   };
 
   return (

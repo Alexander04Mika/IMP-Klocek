@@ -15,13 +15,13 @@ function Login() {
         headers: {
           'Content-Type': 'application/json'
         },
-        credentials: 'include', // ⬅️ Keeps session active
+        credentials: 'include', 
         body: JSON.stringify({ username, password })
       });
 
       const data = await response.json();
       if (data.success) {
-        navigate('/update'); // Redirect to update page
+        navigate('/update'); 
       } else {
         alert(data.message);
       }
@@ -33,7 +33,7 @@ function Login() {
 
   return (
     <div style={{ padding: '1rem' }}>
-      <h2>Přihlášení administrátora</h2>
+      <h2>Admin Login</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label>

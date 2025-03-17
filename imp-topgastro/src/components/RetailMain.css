@@ -7,37 +7,42 @@ html {
   font-weight: 400;
   }
   
-  .hero-container {
-  background: url('./videos/Proradost.mp4') center center/cover no-repeat;
-  height: 95vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  .retail-hero-container {
+    position: relative;
+    height: 95vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevents video overflow */
   }
   
-  .hero-container video {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  .retail-hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the area */
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Places video behind content */
   }
   
-  .hero-container h1 {
+  .retail-hero-container h1 {
+  position: relative; /* Ensures text stays above the video */
   font-family: 'Playfair Display', serif;
   color: #fff;
   font-size: 75px;
+  text-align: center;
   }
   
-  .hero-container p {
+  .retail-hero-container p {
+  position: relative; /* Ensures text stays above the video */
   font-family: 'Playfair Display', serif;
   color: #fff;
   font-size: 36px;
+  text-align: center;
   }
   
   .hero-btns {
@@ -55,8 +60,8 @@ html {
   margin-left: 4px;
   }
   
-  .topgastro-bar {
-    background-color: #8C1E1E; 
+  .proradost-bar {
+    background-color: #343131; 
     width: 100%; 
     height: 50px; 
     display: flex;

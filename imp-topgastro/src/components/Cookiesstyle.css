@@ -1,0 +1,147 @@
+
+.banner {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #222;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    gap: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    flex-wrap: wrap; 
+}
+
+.link {
+    color: #4CAF50;
+    text-decoration: underline;
+}
+
+.acceptButton, .declineButton {
+    background-color: #fff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.acceptButton {
+    background-color: #4CAF50;
+    margin-right: 10px;
+}
+
+.declineButton {
+    background-color: #a2d8a9;
+}
+
+.banner p {
+    font-size: 20px; 
+    color: #fff;
+    margin: 10px 0;
+}
+
+@media (max-width: 970px){
+    .banner {
+        flex-direction: column;
+        justify-content: center; 
+    }
+    .acceptButton, .declineButton {
+        width: 60%; 
+        margin: 0px 0; 
+        padding: 2px 10px; 
+        font-size: 16px; 
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 860px){
+    .banner p{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 800px) {
+    .banner {
+        flex-direction: column; 
+        justify-content: center; 
+    }
+
+}
+@media  (max-width:600px){
+    .banner p{
+        font-size: 14px;
+    }
+    .acceptButton, .declineButton{
+        font-size: 14px;
+    }
+}
+    
+@media (max-width: 480px) {
+    .banner {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .message {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .banner p {
+        font-size: 12px; 
+       
+    }
+    .acceptButton, .declineButton{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 385px) {
+    .banner p{
+        font-size: 10px;
+    }
+    .acceptButton, .declineButton{
+        font-size: 10px;
+    }
+
+}
+
+@media (max-width: 330px) {
+    .banner p{
+        font-size: 8px;
+    }
+    .acceptButton, .declineButton{
+        font-size: 8px;
+    }
+
+}
+
+.cookieMessage {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.closeButton {
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px;
+}
+
