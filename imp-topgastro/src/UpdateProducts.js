@@ -117,7 +117,6 @@ function UpdateProducts() {
       </label>
       <br />
 
-
       <textarea
         value={content}
         onChange={(e) => setContent(e.target.value)}
@@ -136,7 +135,6 @@ function UpdateProducts() {
       </button>
 
       <h3>Přidat nový produkt</h3>
-
 
       <input
         type="text"
@@ -162,7 +160,6 @@ function UpdateProducts() {
         value={newProduct.quantity}
         onChange={(e) => setNewProduct({ ...newProduct, quantity: e.target.value })}
       />
-
 
       <label>
         Vybrat kategorii:
